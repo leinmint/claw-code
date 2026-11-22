@@ -51,7 +51,6 @@ The canonical implementation lives in [`rust/`](./rust), and the current source 
 
 ## Quick start
 
-> [!NOTE]
 > [!WARNING]
 > **`cargo install claw-code` installs the wrong thing.** The `claw-code` crate on crates.io is a deprecated stub that places `claw-code-deprecated.exe` — not `claw`. Running it only prints `"claw-code has been renamed to agent-code"`. **Do not use `cargo install claw-code`.** Either build from source (this repo) or install the upstream binary:
 > ```bash
@@ -176,10 +175,12 @@ claw --help
 
 **Option 3: Update shell profile (bash/zsh)**
 
-Add this line to `~/.bashrc` or `~/.zshrc`:
+Add this line to `~/.bashrc` or `~/.zshrc`, replacing `/absolute/path/to/claw-code` with the absolute path to your clone:
 ```bash
-export PATH="$(pwd)/rust/target/debug:$PATH"
+export PATH="/absolute/path/to/claw-code/rust/target/debug:$PATH"
 ```
+
+Use a fixed absolute path so new terminals can find `claw` regardless of their working directory.
 
 Reload your shell:
 ```bash
